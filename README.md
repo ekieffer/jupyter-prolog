@@ -1,8 +1,8 @@
 # Prolog IPython magic
 
-- Extension to add a magick which helps defining some shell commands to be ran before the kernel start.
+- Extension to add a magick which helps defining some shell commands to be ran before the IPython kernel starts.
 
-- Can be useful if you wish to define some environment variables or use [lmod](https://lmod.readthedocs.io/en/latest/) in the context of HPC
+- Can be useful if you wish to define some environment variables or use [lmod](https://lmod.readthedocs.io/en/latest/) in the context of HPC 
 
 
 ## Installation
