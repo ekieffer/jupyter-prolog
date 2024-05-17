@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+jupyter-prolog/__init__.py
+jupyter-prolog/prolog.py
+jupyter_prolog.egg-info/PKG-INFO
+jupyter_prolog.egg-info/SOURCES.txt
+jupyter_prolog.egg-info/dependency_links.txt
+jupyter_prolog.egg-info/requires.txt
+jupyter_prolog.egg-info/top_level.txt
