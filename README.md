@@ -7,7 +7,7 @@
 
 ## Installation
 
-`pip install jupyter-prolog`
+`pip install git+https://github.com/ekieffer/jupyter-prolog.git`
 
 
 ## Usage
