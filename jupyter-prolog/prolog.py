@@ -2,6 +2,7 @@ from IPython.core.magic import Magics, magics_class, line_cell_magic
 from jupyter_client.kernelspec import KernelSpecManager
 from datetime import datetime
 import os
+import sys
 import ipykernel
 import json
 
