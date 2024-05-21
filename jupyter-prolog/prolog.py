@@ -22,17 +22,16 @@ class Prolog_Magics(Magics):
              kernel_id=kernel_spec['kernel_name']
          ksm = KernelSpecManager()
          current_specs = ksm.get_kernel_spec(kernel_id)
-
          with open(os.path.join(current_specs.resource_dir,'start.sh'),'w')as f:
               script=template.format(custom=content)    
               f.write(script)
+         os.chmod(os.path.join(current_specs.resource_dir,'start.sh'),700)
          # Modify the kernel spec if needed
          with open(os.path.join(current_specs.resource_dir, 'kernel.json'), 'r+',encoding='utf-8') as f:
              kernel_spec = json.load(f)
-             # Check if we already modified the kernel
-             if not 'modified' in kernel_spec :
-                 kernel_spec['argv'].insert(0,"{resource_dir}/start.sh")
-                 kernel_spec['modified']=datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+             kernel_spec['argv'] = ["{resource_dir}/start.sh",sys.executable,"-m", "ipykernel_launcher",
+                                                                             "-f", "{connection_file}"]
+             kernel_spec['modified']=datetime.now().strftime("%d/%m/%Y %H:%M:%S")
              f.seek(0)
              json.dump(kernel_spec, f,ensure_ascii=False, indent=4)
              f.truncate()
