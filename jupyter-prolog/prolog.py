@@ -30,7 +30,7 @@ class Prolog_Magics(Magics):
          # Modify the kernel spec if needed
          with open(os.path.join(current_specs.resource_dir, 'kernel.json'), 'r+',encoding='utf-8') as f:
              kernel_spec = json.load(f)
-             kernel_spec['argv'] = ["{resource_dir}/start.sh",sys.executable,"-m", "ipykernel_launcher",
+             kernel_spec['argv'] = ["{resource_dir}/start.sh","python","-m", "ipykernel_launcher",
                                                                              "-f", "{connection_file}"]
              kernel_spec['modified']=datetime.now().strftime("%d/%m/%Y %H:%M:%S")
              f.seek(0)
