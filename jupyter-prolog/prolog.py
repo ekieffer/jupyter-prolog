@@ -26,7 +26,7 @@ class Prolog_Magics(Magics):
          with open(os.path.join(current_specs.resource_dir,'start.sh'),'w')as f:
               script=template.format(custom=content)    
               f.write(script)
-         os.chmod(os.path.join(current_specs.resource_dir,'start.sh'),700)
+         os.chmod(os.path.join(current_specs.resource_dir,'start.sh'),0o700)
          # Modify the kernel spec if needed
          with open(os.path.join(current_specs.resource_dir, 'kernel.json'), 'r+',encoding='utf-8') as f:
              kernel_spec = json.load(f)
